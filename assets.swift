@@ -1,19 +1,24 @@
 import Foundation
 
 class Assets {
-    var cards: [Card] = [Card]()
+    var cards: [Card]
     
     init() {
-        let suits: [String] = ["Clubs", "Diamonds", "Hearts", "Spades"]
-        let names: [String] = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
+        let file = Bundle.main.path(forResource: "cards", ofType: "json") // JSON file that holds cards
+        let decoder = JSONDecoder() // variable to use JSONDecoder
         
-        for suit in suits {
-            
-            for name in names {
-                let rank = names.index(of: name)!+1
-                let card = Card(name: name, rank: rank, suit: suit)
-                cards.append(card)
+        // check if file exists, and if it does load it
+        if (file != nil) {
+            do {
+                let contents = try Data(String(contentsOfFile: file!, encoding: .utf8).utf8)
+                let pCards = try decoder.decode(CardList.self, from: contents)
+                cards = pCards.cards
+            } catch {
+               cards = [Card]()
             }
+        } else {
+            print("could not load file")
+            cards = [Card]()
         }
     } // end init statement
     
