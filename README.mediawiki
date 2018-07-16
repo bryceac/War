@@ -1,8 +1,11 @@
 =War=
 
 '''Name:''' War
+
 '''Version:''' 0.1
+
 '''Author:''' Bryce Campbell
+'''License:''' See LICENSE file
 
 Copyright &#169; Bryce Campbell
 
