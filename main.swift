@@ -1,8 +1,6 @@
 let assets = Assets()
 let cards = assets.shuffled(supply: assets.cards)
 
-let opponents: [Character] = [Character(name: "Henry"), Character(name: "Marcus"), Character(name: "Alexander"), Character(name: "Akira")]
-
 var name: String? // variable to hold name of player
 repeat {
     print("Enter Name: ")
@@ -11,7 +9,7 @@ repeat {
 
 var player = Character(name: name!) // create a player object
 
-var opponent = opponents[RandomGen(number: opponents.count)] // randomly pick opponent
+var opponent = assets.opponents[RandomGen(number: assets.opponents.count)] // randomly pick opponent
 
 let dealer = RandomGen(number: 2) // generate a random number between 0 and 1 in a way that works on different platforms
 

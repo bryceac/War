@@ -1,15 +1,34 @@
 import Foundation
 
 // character class is a generic class for players in game
-class Character {
+class Character: Codable {
     let name: String // variable to hold name of player
-    var card: Card? // variable used to deal with revealed card
+    var card: Card? = nil // variable used to deal with revealed card
     var cards: [Card] = [Card]() // variable to handle cards in play
     var deck: [Card] = [Card]() // variable that holds drawable cards
     var discard: [Card] = [Card]() // variable to house discarded cards
     
+    // initializers
     init(name: String) {
         self.name = name
+    }
+    
+    // needed to decode JSON
+    required convenience init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let n = try values.decode(String.self, forKey: .name)
+        
+        self.init(name: n)
+    }
+    
+    // needed to encode data
+    func encode( to encoder: Encoder) throws {
+        var values = encoder.container(keyedBy: CodingKeys.self)
+        try values.encode(self.name, forKey: .name)
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case name
     }
     
     // function to allow players to shuffle cards back into deck
@@ -48,3 +67,7 @@ class Character {
         } // end loop
     }
 } // end class
+
+struct CharacterList: Codable {
+    let characters: [Character]
+}
