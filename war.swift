@@ -18,7 +18,7 @@ class War {
     }
     
     func compare(card1: Card, card2: Card) -> Bool {
-        if (card1.name != "Ace" && card2.name != "Ace") {
+        if (card1.rank != 1 && card2.rank != 1) {
             if (card1.rank > card2.rank) {
                 return true
             } else if (card1.rank < card2.rank) {
@@ -27,14 +27,14 @@ class War {
                 return false
             }
         } else {
-            if (card1.name == "Ace" && card2.rank == 4) {
+            if (card1.rank == 1 && card2.rank == 4) {
                 return false
-            } else if (card1.rank == 4 && card2.name == "Ace") {
+            } else if (card1.rank == 4 && card2.rank == 1) {
                 return true
             } else {
-                if (card1.name == "Ace" && card2.name != "Ace" ) {
+                if (card1.rank == 1 && card2.rank != 1 ) {
                     return true
-                } else if (card2.name == "Ace" && card1.name != "Ace") {
+                } else if (card2.rank == 1 && card1.rank != 1) {
                     return false
                 } else {
                     return false
