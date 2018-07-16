@@ -22,13 +22,13 @@ class Assets {
         }
     } // end init statement
     
-    func shuffled(cards: [Card]) -> [Card] {
+    func shuffled(supply: [Card]) -> [Card] {
         var deck = [Card]()
-        deck.append(contentsOf: cards)
+        deck.append(contentsOf: supply)
         
-        for _ in 0..<cards.count {
+        for _ in 0..<supply.count {
             let rand = RandomGen(number: cards.count)
-            deck.append(cards[rand])
+            deck.append(supply[rand])
             deck.remove(at: rand)
         }
         

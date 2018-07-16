@@ -1,5 +1,5 @@
 let assets = Assets()
-let cards = assets.shuffled(cards: assets.cards)
+let cards = assets.shuffled(supply: assets.cards)
 
 let opponents: [Character] = [Character(name: "Henry"), Character(name: "Marcus"), Character(name: "Alexander"), Character(name: "Akira")]
 
