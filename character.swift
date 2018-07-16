@@ -37,10 +37,9 @@ class Character: Codable {
         var pile = [Card]()
         pile.append(contentsOf: supply)
         
-        for _ in 0..<supply.count {
-            let rand = RandomGen(number: supply.count)
-            pile.append(supply[rand])
-            pile.remove(at: rand)
+        for idx in 0..<pile.count {
+            let rand = RandomGen(number: pile.count)
+            pile.swapAt(idx, rand)
         }
         
         return pile

@@ -53,10 +53,9 @@ class Assets {
         var deck = [Card]()
         deck.append(contentsOf: supply)
         
-        for _ in 0..<supply.count {
-            let rand = RandomGen(number: cards.count)
-            deck.append(supply[rand])
-            deck.remove(at: rand)
+        for idx in 0..<deck.count {
+            let rand = RandomGen(number: deck.count)
+            deck.swapAt(idx, rand)
         }
         
         return deck
