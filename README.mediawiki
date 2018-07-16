@@ -1,0 +1,27 @@
+=War=
+
+'''Name:''' War
+'''Version:''' 0.1
+'''Author:''' Bryce Campbell
+
+Copyright &#169; Bryce Campbell
+
+'''Description:''' A simple card game that many people are familiar written in Apple's Swift Programming language.
+
+==Notes==
+
+This program has been written for Swift version 4.1 and <strong>should</strong> work on both Mac and Linux, but because Swift is not properly running on Ubuntu, I could only test this on a Mac environment.
+
+Playing style is similiar to what one is used to in a text-based environment, except for two changes, which are four card draws when war happens and 4 will beat Aces and cards less than 4 only.
+
+Cards are loaded through a JSON file, so you can customize things to your liking, without needing to recompile.
+
+However, if you do change the cards and suits, do not mess with the card ranks, as they are used to determine what cards beat what.
+
+===Support===
+
+If you need help, contact me through my personal website, which is located at the address below.
+
+http://brycecampbell.me
+
+I will try to help as best as I can, but due to the troubles with Swift not working properly on the version of Ubuntu I have, which is the latest LTS release, and I have not tried things out with Debian 9, I cannot guarantee that I will be able to really resolve things.
