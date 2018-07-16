@@ -45,13 +45,14 @@ while (player.isAlive() && opponent.isAlive())
     
     // if cards match, initiate war
     if (!war.compare(card1: player.card!, card2: opponent.card!) && player.card!.rank == opponent.card!.rank){
+        print("War has started")
         if (war.activate()) {
             print("you won the war!")
         } else {
             print("you lost the war.")
         }
     } else if (!war.compare(card1: player.card!, card2: opponent.card!)) {
-         print("\(opponent.name) stole your card")
+         print("\(opponent.name) stole your card.")
         opponent.discard.append(contentsOf: opponent.cards)
         opponent.card = nil
         opponent.cards.removeAll()
@@ -59,7 +60,7 @@ while (player.isAlive() && opponent.isAlive())
         player.card = nil
         player.cards.removeAll()
     } else {
-        print("congratulations on stealing \(opponent.name)'s card")
+        print("Congratulations on stealing \(opponent.name)'s card!")
         player.discard.append(contentsOf: opponent.cards)
         opponent.card = nil
         opponent.cards.removeAll()
