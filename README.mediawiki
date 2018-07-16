@@ -18,7 +18,7 @@ This program has been written for Swift version 4.1 and <strong>should</strong> 
 
 Playing style is similiar to what one is used to in a text-based environment, except for two changes, which are four card draws when war happens and 4 will beat Aces and cards less than 4 only.
 
-Cards are loaded through a JSON file, so you can customize things to your liking, without needing to recompile.
+Cards and characters are loaded through a JSON file, so you can customize things to your liking, without needing to recompile.
 
 However, if you do change the cards and suits, do not mess with the card ranks, as they are used to determine what cards beat what.
 
