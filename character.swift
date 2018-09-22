@@ -33,16 +33,8 @@ class Character: Codable {
     
     // function to allow players to shuffle cards back into deck
     func shuffle(supply: [Card]) -> [Card]
-    {
-        var pile = [Card]()
-        pile.append(contentsOf: supply)
-        
-        for idx in 0..<pile.count {
-            let rand = RandomGen(number: pile.count)
-            pile.swapAt(idx, rand)
-        }
-        
-        return pile
+    {   
+        return supply.shuffled()
     }
     
     func isAlive() -> Bool {

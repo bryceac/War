@@ -1,12 +1,8 @@
 =War=
 
 '''Name:''' War
-
-'''Version:''' 0.1
-
+'''Version:''' 0.2
 '''Author:''' Bryce Campbell
-
-'''License:''' See LICENSE file
 
 Copyright &#169; Bryce Campbell
 
@@ -18,19 +14,18 @@ This program has been written for Swift version 4.1 and <strong>should</strong> 
 
 Playing style is similiar to what one is used to in a text-based environment, except for two changes, which are four card draws when war happens and 4 will beat Aces and cards less than 4 only.
 
-Cards and characters are loaded through a JSON file, so you can customize things to your liking, without needing to recompile.
+Cards are loaded through a JSON file, so you can customize things to your liking, without needing to recompile.
 
 However, if you do change the cards and suits, do not mess with the card ranks, as they are used to determine what cards beat what.
 
-===Running===
+===Version History===
 
-To get the program run, switch to the directory where the files have been saved on your computer, and type
-
-<pre>make</pre>
-
-to play the game, type in the following in your terminal application
-
-<pre>./war</pre>
+<dl>
+<dt>'''0.1'''</dt>
+<dd>Initial release, and written for Swift 4.1.</dd>
+<dt>'''0.2'''</dt>
+<dd>Change shuffling and random mechanics to those officially available in Swift 4.2, eliminating need for custom random number generator.</dd>
+</dl>
 
 ===Support===
 
@@ -39,7 +34,3 @@ If you need help, contact me through my personal website, which is located at th
 http://brycecampbell.me
 
 I will try to help as best as I can, but due to the troubles with Swift not working properly on the version of Ubuntu I have, which is the latest LTS release, and I have not tried things out with Debian 9, I cannot guarantee that I will be able to really resolve things.
-
-===Misc.===
-
-Due to the limitations of commandline programs with Swift 4.1, I have to use MakeFiles, instead of the preferred SPM method, so that the JSON file can be recognized.
